@@ -1,195 +1,366 @@
-# 🤖 DIO Agent
+# 🛡️ GuardIA
 
-> Seu mentor com Inteligência Artificial para aprender mais e melhor na [DIO](https://dio.me).
+> Seu agente inteligente de Segurança da Informação para aprender, analisar, praticar e evoluir em Cibersegurança.
 
-O **DIO Agent** é um agente de IA que acompanha você na sua jornada de estudos. Ele conhece as experiências da DIO (Bootcamps, Formações, Cursos, Desafios e muito mais) e ajuda você a estudar, praticar e planejar a sua carreira.
+O **GuardIA** é um agente de Inteligência Artificial especializado em Segurança da Informação, Cibersegurança, análise de vulnerabilidades, Pentest, redes, sistemas Linux e Windows, aplicações Web e defesa cibernética.
 
-Você não precisa saber programar nem instalar nada complicado. Em **3 passos**, o seu mentor está pronto para usar.
+Ele acompanha você na jornada de aprendizado e prática em segurança, ajudando a compreender conceitos, planejar avaliações, analisar ferramentas, investigar vulnerabilidades, desenvolver habilidades técnicas e documentar cada atividade.
+
+O GuardIA foi projetado para atuar como um mentor técnico e assistente de segurança, combinando conhecimento, instruções especializadas e metodologias organizadas.
+
+Você pode utilizá-lo no Hermes Agent, dentro do seu ambiente de desenvolvimento, para estudar, analisar projetos, trabalhar em laboratórios controlados e organizar suas avaliações de segurança.
 
 ---
 
-## ✨ Três palavras para começar
+## ✨ Três conceitos para começar
 
-- 🧠 **Agente de IA:** um chatbot responde perguntas. Um *agente* vai além: lê, planeja e executa passos para ajudar você a alcançar um objetivo. É a diferença entre alguém que explica o caminho e alguém que caminha junto com você.
-- 🖥️ **Harness:** é o programa onde o agente roda. O agente é o mentor, e o harness é a sala onde vocês se encontram. O mesmo mentor atende em salas diferentes, por isso o DIO Agent funciona em vários harnesses.
-- 🧩 **Skill:** é uma habilidade do agente, descrita em um guia passo a passo. Você não precisa chamar a skill: o agente percebe o que você precisa e usa a certa sozinho.
+- 🧠 **Agente de IA:** um chatbot responde perguntas. Um agente vai além: interpreta objetivos, consulta referências, planeja etapas e utiliza ferramentas disponíveis para auxiliar na realização de tarefas. O GuardIA atua como seu assistente de segurança, orientando investigações e análises.
 
-Esses e outros termos estão no [Glossário](docs/glossary.md).
+- 🖥️ **Harness:** é o ambiente onde o agente funciona, acessa suas instruções, interage com ferramentas e executa tarefas. O Hermes é o ambiente utilizado neste projeto para operar o GuardIA.
+
+- 🧩 **Skill:** é uma habilidade especializada, descrita por instruções que orientam o agente a realizar determinado tipo de tarefa. As skills ajudam o GuardIA a seguir metodologias específicas sem precisar concentrar todas as instruções em um único arquivo.
 
 ---
 
 ## 🚀 Comece em 3 passos
 
-### 1️⃣ Instale um harness
+### 1️⃣ Instale e configure o Hermes
 
-Recomendamos o **Google Antigravity**, que tem limites de uso generosos para quem está começando. Mas qualquer harness da lista funciona: escolha um e siga a instalação da documentação oficial dele.
+O GuardIA utiliza o Hermes Agent como ambiente de execução.
 
-| Harness | Documentação oficial |
-|---------|----------------------|
-| Google Antigravity (recomendado) | https://antigravity.google/docs |
-| Claude Code | https://code.claude.com/docs |
-| Codex | https://developers.openai.com/codex |
-| OpenCode | https://opencode.ai/docs |
-| Hermes | https://hermes-agent.nousresearch.com/docs |
+Instale e configure o Hermes seguindo a documentação oficial:
 
-### 2️⃣ Baixe o DIO Agent e abra no harness
+https://hermes-agent.nousresearch.com/docs/
 
-Baixe este repositório do jeito mais simples para você:
+Configure o provedor de IA, modelo, terminal backend e ferramentas conforme seu ambiente.
 
-- **Com Git:** no terminal, rode `git clone https://github.com/digitalinnovationone/dio-agent.git`
-- **Sem Git:** no topo desta página, clique no botão verde **Code**, depois em **Download ZIP**, e extraia a pasta.
+### 2️⃣ Abra o projeto no VS Code
 
-Depois, abra no harness a pasta do projeto, a que tem o arquivo `AGENTS.md` (pelo Git, ela se chama `dio-agent`; pelo .zip, `dio-agent-main`). O harness lê esse arquivo sozinho, e o agente já sabe quem é: o seu mentor de estudos da DIO.
+Abra no VS Code a pasta raiz do projeto GuardIA.
 
-### 3️⃣ Converse
+O agente utiliza arquivos de instrução, conhecimento e skills para orientar seu comportamento.
 
-Fale naturalmente, com as suas palavras. Nas primeiras vezes, vale usar um dos [modelos de prompt](#-modelos-de-prompt) abaixo: quanto mais contexto você dá, melhor o agente ajuda.
+Estrutura principal:
+
+- `agent/` — arquivos de identidade, conhecimento e contexto.
+- `agent/knowledge/` — referências técnicas utilizadas para fundamentar respostas.
+- `skills/` — procedimentos especializados para tarefas específicas.
+- `README.md` — documentação central do projeto.
+
+### 3️⃣ Converse com o GuardIA
+
+Fale naturalmente.
+
+Você pode pedir explicações, solicitar análises, estudar ferramentas, elaborar planos de testes, entender vulnerabilidades ou montar laboratórios.
+
+Quanto mais contexto você fornecer — objetivo, ambiente, nível de conhecimento e restrições — melhor será a orientação.
 
 ---
 
-## 🧩 As skills do agente
+## 🧩 Conhecimento e skills
 
-| Skill | Para que serve | Experimente pedir |
-|-------|----------------|-------------------|
-| [Plano de estudos](skills/study-plan/SKILL.md) | Organiza o que estudar, em que ordem e em quanto tempo | "Quero concluir este Bootcamp em 2 meses, me ajuda?" |
-| [Destravar desafio](skills/unblock-challenge/SKILL.md) | Conduz você até a solução de um desafio, sem dar a resposta pronta | "Travei nesse desafio, me ajuda?" |
-| [Explicar conceito](skills/explain-concept/SKILL.md) | Explica conceitos de forma simples, com analogias e exemplos | "Não entendi o que é uma API." |
-| [Pesquisa na web](skills/web-search/SKILL.md) | Responde dúvidas atuais (versões, lançamentos, mercado) com fontes citadas | "Qual a versão estável do Node hoje?" |
-| [Revisão de portfólio](skills/portfolio-review/SKILL.md) | Dá feedback sobre o seu portfólio e GitHub antes de buscar vagas | "O que falta no meu GitHub para uma vaga júnior?" |
-| [Caminho AI Builder](skills/ai-builder-path/SKILL.md) | Ajuda você a escolher o próximo passo na Carreira AI Builder | "Qual Formação AI Builder combina comigo?" |
-| [Laboratório de pentest](skills/pentest-lab/SKILL.md) | Monta um laboratório local de segurança em VMs isoladas (opcional, avançado) | "Quero montar um laboratório de pentest em casa." |
-| [Análise de vulnerabilidades](skills/pentest-vulnerability/SKILL.md) | Explica um achado de scan, o impacto e a correção (opcional, avançado) | "Encontrei essa vulnerabilidade no meu lab, me ajuda?" |
+O GuardIA utiliza referências e instruções especializadas para manter suas respostas organizadas e consistentes.
 
-A pesquisa na web usa a busca do seu harness. Se ele não tiver busca própria, veja [como conectar o You.com](docs/youcom-mcp.md), que tem uma opção gratuita.
+| Módulo | Local | Para que serve |
+|---|---|---|
+| Security Basics | `agent/knowledge/security-basics/` | Referência de conceitos, fundamentos, terminologia e boas práticas de segurança |
+| Pentest Analysis | `agent/skills/pentest-analysis/` | Metodologia para organizar avaliações, analisar resultados, registrar achados e documentar testes |
+
+### 📚 Security Basics
+
+A base `security-basics` é a referência de conhecimento do GuardIA para assuntos de Segurança da Informação.
+
+Ela pode reunir conteúdos como:
+
+- Fundamentos de Cibersegurança.
+- Redes e protocolos.
+- Linux e Windows.
+- Vulnerabilidades.
+- Segurança Web.
+- Autenticação e autorização.
+- Criptografia.
+- OSINT.
+- Segurança ofensiva e defensiva.
+- Hardening.
+- Ferramentas de segurança.
+- Glossário técnico.
+
+O agente deve consultar os materiais relevantes dessa base ao responder questões de segurança, priorizando as referências disponíveis e identificando quando utilizar conhecimento complementar.
+
+### 🛠️ Pentest Analysis
+
+A skill `pentest-analysis` orienta o GuardIA na organização de avaliações técnicas.
+
+Seu propósito é:
+
+- Planejar testes de segurança.
+- Definir e respeitar o escopo.
+- Identificar ativos autorizados.
+- Organizar etapas de análise.
+- Interpretar resultados de ferramentas.
+- Diferenciar suspeitas de vulnerabilidades confirmadas.
+- Registrar evidências.
+- Classificar riscos.
+- Recomendar correções.
+- Documentar atividades no README.
+
+A skill deve ser utilizada em avaliações autorizadas, laboratórios locais e ambientes controlados.
+
+---
+
+## 🎯 O que você pode fazer com o GuardIA?
+
+| Área | Aplicação |
+|---|---|
+| 🔎 Reconhecimento | Compreender a superfície de ataque e informações disponíveis |
+| 🌐 Redes | Estudar protocolos, portas, serviços e arquitetura de redes |
+| 🐧 Linux | Aprender comandos, permissões, serviços e hardening |
+| 🪟 Windows | Analisar configurações, serviços, permissões e segurança |
+| 🕸️ Web Security | Estudar aplicações Web, sessões, APIs e vulnerabilidades |
+| 🧪 Pentest | Planejar e realizar testes autorizados em laboratórios |
+| 🛡️ Defesa | Aprender prevenção, detecção, mitigação e resposta |
+| 📊 Vulnerabilidades | Analisar CVEs, impacto, severidade e correções |
+| 📁 Código | Revisar códigos em busca de problemas de segurança |
+| 📝 Relatórios | Documentar testes, evidências, riscos e recomendações |
+| 🧠 Aprendizado | Construir conhecimento técnico de forma progressiva |
 
 ---
 
 ## 📝 Modelos de prompt
 
-Copie, preencha o que está entre colchetes e envie. Não precisa de formato perfeito: o agente pede mais detalhes se precisar.
+Copie, adapte e envie ao GuardIA. Você não precisa escrever prompts complexos: descreva o que deseja aprender ou analisar.
 
-**🗺️ Plano de estudos**
+### 💡 Explicar um conceito de segurança
 
-```
-Quero montar um plano de estudos.
-- Meu objetivo: [ex: ser dev back-end, concluir um Bootcamp]
-- O que quero fazer na DIO: [link ou nome do Bootcamp, Formação, Aceleração ou Carreira]
-- O que já tenho: [um plano de ação ou de estudos, se tiver]
-- Meu nível hoje: [iniciante, intermediário, avançado]
-- Tempo disponível: [ex: 1 hora por dia, de segunda a sexta]
-```
+```text
+GuardIA, quero estudar um conceito de Segurança da Informação.
 
-**🔓 Destravar desafio**
+- Assunto: [ex.: SQL Injection, MITM, DNS, firewall]
+- Meu nível: [iniciante, intermediário ou avançado]
+- Objetivo: [entender, praticar, preparar uma auditoria]
 
-```
-Estou travado em um Desafio de [Código, Projeto ou Criativo] da DIO.
-- O que o desafio pede: [cole o enunciado ou, no Desafio de Projeto, o link do repositório do desafio]
-- Onde eu travei: [explique o ponto da dificuldade]
-- Meu código ou repositório: [cole o código ou o link, se tiver]
-Me ajuda a destravar sem dar a resposta pronta.
+Explique o conceito, como funciona, exemplos didáticos,
+riscos, formas de identificar e medidas de prevenção.
+
+Consulte sua base security-basics antes de responder.
 ```
 
-**💡 Explicar conceito**
+### 🔍 Analisar uma vulnerabilidade
 
-```
-Me explica o conceito de [ex: API, laço de repetição, herança].
-- Meu nível: [nunca vi, já ouvi falar, quero aprofundar]
+```text
+GuardIA, quero analisar uma vulnerabilidade.
+
+- Vulnerabilidade: [nome ou CVE]
+- Sistema afetado: [software, versão ou laboratório]
+- Evidência disponível: [resultado de scan, log ou descrição]
+- Objetivo: [compreender o impacto e a correção]
+
+Explique a vulnerabilidade, condições necessárias,
+impactos, formas seguras de validação e recomendações.
+
+Diferencie informações confirmadas de hipóteses.
 ```
 
-**🧭 Caminho AI Builder**
+### 🧪 Montar um laboratório de Pentest
 
-```
-Quero escolher meu próximo passo na Carreira AI Builder.
-- O que quero construir com IA: [ex: um produto para o meu negócio, um software, agentes que automatizam processos, ainda não sei]
-- Minha experiência com programação: [nenhuma, o básico, trabalho com desenvolvimento]
-- Meu objetivo: [ex: mudar de carreira, tirar uma ideia do papel]
+```text
+GuardIA, quero montar um laboratório de Pentest local.
+
+- Meu nível: [iniciante, intermediário ou avançado]
+- Virtualizador: [VirtualBox, VMware ou outro]
+- Sistemas disponíveis: [Kali, Ubuntu, Windows, máquinas vulneráveis]
+- Objetivo: [redes, Web, serviços, análise de vulnerabilidades]
+- Escopo: somente máquinas virtuais próprias e rede isolada
+
+Monte um plano de laboratório, explique a arquitetura,
+os requisitos, a rede, os riscos e as etapas de configuração.
+
+Não execute alterações antes de apresentar o plano e aguardar minha aprovação.
 ```
 
-**🛡️ Laboratório de pentest (opcional, avançado)**
+### 🖥️ Aprender uma ferramenta no terminal
 
+```text
+GuardIA, quero aprender uma ferramenta de segurança.
+
+- Ferramenta: [Nmap, Wireshark, WPScan, ZAP etc.]
+- Sistema: [Kali Linux, Ubuntu, Windows]
+- Meu nível: [iniciante, intermediário, avançado]
+- Objetivo: [o que desejo aprender]
+
+Explique a ferramenta, seus recursos, parâmetros,
+comandos de laboratório, resultados esperados,
+interpretação e medidas defensivas.
+
+Utilize somente alvos locais ou explicitamente autorizados.
 ```
-Quero montar um laboratório local de pentest.
-- Meu nível com redes/Linux: [nunca estudei, sei o básico, já pratico]
-- Já usei VirtualBox: [sim, não]
-- O que quero aprender: [ex.: reconhecimento, análise de vulnerabilidades]
-- Confirme que vou usar só a rede 192.168.56.0/24
+
+### 🛡️ Auditoria de segurança
+
+```text
+GuardIA, quero planejar uma auditoria de segurança.
+
+- Ambiente: [laboratório, sistema próprio ou ambiente autorizado]
+- Alvo: [identificação do ativo]
+- Escopo autorizado: [IPs, domínios ou sistemas]
+- Objetivo: [verificar segurança, configurações ou exposição]
+- Restrições: [limites de teste]
+
+Crie um plano organizado por fases, com ferramentas,
+objetivos, riscos, critérios de validação e documentação.
+
+Não execute testes ativos antes de validar o escopo e obter minha aprovação.
+```
+
+### 📋 Documentar um resultado
+
+```text
+GuardIA, analise o resultado deste teste e documente.
+
+- Teste: [nome]
+- Alvo: [ativo autorizado]
+- Ferramenta: [nome]
+- Resultado: [cole a saída]
+
+Interprete os resultados, identifique possíveis riscos,
+diferencie achados confirmados de suspeitas e falsos positivos,
+recomende correções e prepare um registro para o README.md.
+
+Não invente resultados e preserve a documentação existente.
 ```
 
 ---
 
-## 🛡️ GuardIA: laboratório de segurança
+## 🛡️ GuardIA Lab — Laboratório de Segurança
 
-Se você quiser estudar segurança, o DIO Agent entra no **modo GuardIA**: um mentor que ensina testes de penetração em um laboratório local, isolado e criado por você.
+O GuardIA possui uma proposta de utilização prática para aprendizado de segurança cibernética por meio de laboratórios controlados.
 
-Antes de qualquer exercício, o agente lê as [regras de escopo](docs/pentest-scope.md) e valida o alvo. Só a rede `192.168.56.0/24` (VirtualBox Host-Only) e o loopback são autorizados. A rede do seu Wi-Fi, a Internet e qualquer sistema de terceiro estão fora de escopo — ponto final.
+O laboratório é destinado ao estudo de redes, sistemas, serviços, vulnerabilidades e técnicas de análise de segurança em ambientes próprios ou explicitamente autorizados.
 
-Este é um conteúdo **opcional e avançado**. Se você está começando em tecnologia, siga primeiro o plano de estudos. O laboratório não é necessário para as outras skills.
+### Ambiente recomendado
 
-O guia de montagem está em [`skills/pentest-lab/scripts/lab-setup.md`](skills/pentest-lab/scripts/lab-setup.md). Para checar o ambiente sem contatar nenhum alvo:
+- Kali Linux — estação de análise.
+- Ubuntu Server — servidor de laboratório.
+- Windows — laboratório de auditoria e administração.
+- OWASP Juice Shop — aplicação Web vulnerável para aprendizado.
+- Metasploitable — sistema intencionalmente vulnerável para treinamento.
+- VirtualBox — virtualização e isolamento das máquinas.
 
-```
-python skills/pentest-lab/scripts/env_check.py
-```
+### Regras do laboratório
+
+- Utilizar máquinas virtuais próprias.
+- Isolar a rede do laboratório.
+- Definir os alvos antes dos testes.
+- Não utilizar redes de terceiros.
+- Não testar sistemas públicos sem autorização.
+- Evitar ações destrutivas.
+- Registrar comandos e resultados.
+- Documentar evidências.
+- Restaurar snapshots quando necessário.
+
+O laboratório é opcional e recomendado para quem deseja aprofundar os estudos práticos de Segurança da Informação.
 
 ---
 
-## 🔄 Mantenha o DIO Agent atualizado
+## 📑 Documentação das avaliações
 
-O DIO Agent evolui com o tempo. Se você usou Git, rode `git pull` no terminal, dentro da pasta (ou peça para o próprio agente rodar). Se baixou o .zip, baixe de novo.
+O GuardIA utiliza documentação em Markdown para manter um histórico organizado das avaliações e atividades realizadas.
+
+A documentação deve registrar:
+
+- Objetivo do teste.
+- Escopo e autorização.
+- Ambiente.
+- Data e horário.
+- Metodologia.
+- Ferramentas.
+- Comandos executados.
+- Resultados observados.
+- Evidências.
+- Vulnerabilidades confirmadas.
+- Falsos positivos.
+- Classificação de riscos.
+- Recomendações.
+- Retestes.
+- Conclusão.
+
+O README deve preservar o histórico existente, sem apagar resultados anteriores, e distinguir claramente testes planejados, executados e simulados.
 
 ---
 
-## 🗂️ Estrutura do repositório
+## 📂 Estrutura do projeto
 
-```
-dio-agent/
-├── README.md                Este guia
-├── AGENTS.md                Definição do agente (lida pelo harness)
-├── CLAUDE.md                Atalho para o Claude Code
+```text
+GuardIA/
+├── README.md
 ├── agent/
-│   ├── persona.md           A personalidade e o tom do agente
-│   └── knowledge/           O que o agente sabe sobre a DIO
-│       └── persona-guardia.md   O modo GuardIA (segurança)
-├── skills/                  Uma pasta por skill, cada uma com o seu SKILL.md
-│   ├── pentest-lab/         Laboratório local (opcional)
-│   │   ├── scripts/         scope_guard.py, env_check.py, lab-setup.md
-│   │   ├── evidence/        Modelos de evidência
-│   │   ├── scans/           Modelos de resultado de scan
-│   │   └── report/          Modelo de relatório final
-│   └── pentest-vulnerability/   Análise de vulnerabilidades (opcional)
-└── docs/
-    ├── glossary.md          Glossário de termos
-    ├── youcom-mcp.md        Como conectar a busca do You.com
-    └── pentest-scope.md     Escopo e autorização do laboratório
+│   ├── knowledge/
+│   │   └── security-basics/
+│   │       └── [referências de segurança]
+│   └── skills/
+│       └── pentest-analysis/
+│           ├── README.md
+│           └── SKILL.md
+├── docs/
+│   └── [documentação complementar]
+├── evidencias/
+│   └── [evidências sanitizadas]
+├── scans/
+│   └── [resultados de análises autorizadas]
+└── relatorios/
+    └── [relatórios de segurança]
 ```
 
----
-
-## 🤝 Contribua
-
-Tem uma ideia de skill? Veja [como criar uma skill](skills/README.md) e abra um pull request.
+Os diretórios de evidências, scans e relatórios podem ser adicionados conforme a necessidade do projeto.
 
 ---
 
-## 💬 Sobre este projeto
+## 🔄 Evolução do GuardIA
 
-O DIO Agent foi criado para acompanhar você nos Bootcamps e Formações da DIO. A ideia é simples: aprender na era da IA fica mais fácil quando você tem um mentor disponível a qualquer hora.
+O GuardIA é um projeto modular. Novos conhecimentos, instruções e habilidades podem ser adicionados gradualmente.
 
-Bons estudos, e vem com a gente. 🚀
+Possíveis módulos futuros:
+
+- Reconhecimento e OSINT.
+- Network Recon.
+- Web Security.
+- Linux Security.
+- Windows Security.
+- Vulnerability Analysis.
+- Malware Analysis — análise controlada.
+- Cloud Security.
+- Docker Security.
+- Incident Response.
+- Report Engine.
+- Lab Manager.
+
+Cada novo módulo deve possuir um objetivo claro, instruções próprias e limites operacionais.
 
 ---
 
-## 📓 Registro de atividade (simulado)
+## 🤝 Contribua para o conhecimento
 
-> Registro fictício, criado apenas para validar o padrão de documentação do GuardIA. Nenhuma ferramenta foi executada e nenhuma verificação técnica foi feita.
+O conhecimento do GuardIA pode evoluir por meio da adição de novas referências, documentação técnica, metodologias e skills.
 
-| Campo | Valor |
-|-------|-------|
-| ID da atividade | LAB-001 |
-| Nome | Teste de validação documental |
-| Ambiente | Laboratório fictício |
-| Objetivo | Verificar a estrutura de registro do GuardIA |
-| Status | CONCLUÍDO |
-| Resultado | Teste simulado de documentação, sem execução técnica |
-| Vulnerabilidades | Nenhuma avaliada |
-| Recomendação | Nenhuma |
+Ao adicionar materiais:
+
+- Prefira fontes confiáveis.
+- Organize por assunto.
+- Evite duplicidade.
+- Identifique materiais desatualizados.
+- Não inclua credenciais ou dados sensíveis.
+- Diferencie documentação de procedimentos executáveis.
+
+---
+
+## 💬 Sobre o GuardIA
+
+O GuardIA foi concebido para ser um parceiro de aprendizado e análise em Segurança da Informação.
+
+Seu propósito é transformar conhecimento técnico em compreensão, prática controlada e melhoria de segurança.
+
+Mais do que executar ferramentas, o GuardIA busca ensinar como interpretar resultados, compreender riscos, validar evidências e corrigir vulnerabilidades.
+
+**Investigue com método. Aprenda com profundidade. Valide com evidências. Documente cada etapa.**
+
+🛡️ **GuardIA — Inteligência aplicada à Segurança.**
