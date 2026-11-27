@@ -63,3 +63,21 @@ MCP vem de "Model Context Protocol". É um padrão aberto para conectar o agente
 LLM vem de "Large Language Model", ou Modelo de Linguagem de Grande Escala. É a tecnologia de IA que entende e gera texto, e que está por trás do agente.
 
 *Analogia:* é o "cérebro" do mentor, que entende e gera linguagem. O harness é a sala onde vocês se encontram, e o AGENTS.md diz a esse cérebro qual papel exercer.
+
+## Pentest
+
+Pentest (teste de penetração) é um exercício controlado para descobrir falhas de segurança antes que alguém com má intenção as encontre. No DIO Agent, isso acontece só em um laboratório local isolado.
+
+*Analogia:* é como testar o cadeado da sua própria casa para ver se ele resiste — nunca testar o cadeado da casa do vizinho.
+
+## Escopo
+
+Escopo é o limite do que pode ser testado. Aqui, só `192.168.56.0/24` e o loopback são autorizados. Fora disso, a resposta é não.
+
+*Analogia:* é o quadro que diz onde o teste pode chegar. Se o pé sair do quadro, o exercício para.
+
+## Laboratório isolado
+
+Um laboratório isolado é uma máquina virtual que não tem acesso à sua rede real nem à Internet. Ela existe só para você estudar e pode ser restaurada por um snapshot.
+
+*Analogia:* é um parquinho com muro: você pode experimentar à vontade lá dentro, e nada escapa para a rua.

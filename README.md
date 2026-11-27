@@ -57,6 +57,8 @@ Fale naturalmente, com as suas palavras. Nas primeiras vezes, vale usar um dos [
 | [Pesquisa na web](skills/web-search/SKILL.md) | Responde dúvidas atuais (versões, lançamentos, mercado) com fontes citadas | "Qual a versão estável do Node hoje?" |
 | [Revisão de portfólio](skills/portfolio-review/SKILL.md) | Dá feedback sobre o seu portfólio e GitHub antes de buscar vagas | "O que falta no meu GitHub para uma vaga júnior?" |
 | [Caminho AI Builder](skills/ai-builder-path/SKILL.md) | Ajuda você a escolher o próximo passo na Carreira AI Builder | "Qual Formação AI Builder combina comigo?" |
+| [Laboratório de pentest](skills/pentest-lab/SKILL.md) | Monta um laboratório local de segurança em VMs isoladas (opcional, avançado) | "Quero montar um laboratório de pentest em casa." |
+| [Análise de vulnerabilidades](skills/pentest-vulnerability/SKILL.md) | Explica um achado de scan, o impacto e a correção (opcional, avançado) | "Encontrei essa vulnerabilidade no meu lab, me ajuda?" |
 
 A pesquisa na web usa a busca do seu harness. Se ele não tiver busca própria, veja [como conectar o You.com](docs/youcom-mcp.md), que tem uma opção gratuita.
 
@@ -103,6 +105,32 @@ Quero escolher meu próximo passo na Carreira AI Builder.
 - Meu objetivo: [ex: mudar de carreira, tirar uma ideia do papel]
 ```
 
+**🛡️ Laboratório de pentest (opcional, avançado)**
+
+```
+Quero montar um laboratório local de pentest.
+- Meu nível com redes/Linux: [nunca estudei, sei o básico, já pratico]
+- Já usei VirtualBox: [sim, não]
+- O que quero aprender: [ex.: reconhecimento, análise de vulnerabilidades]
+- Confirme que vou usar só a rede 192.168.56.0/24
+```
+
+---
+
+## 🛡️ GuardIA: laboratório de segurança
+
+Se você quiser estudar segurança, o DIO Agent entra no **modo GuardIA**: um mentor que ensina testes de penetração em um laboratório local, isolado e criado por você.
+
+Antes de qualquer exercício, o agente lê as [regras de escopo](docs/pentest-scope.md) e valida o alvo. Só a rede `192.168.56.0/24` (VirtualBox Host-Only) e o loopback são autorizados. A rede do seu Wi-Fi, a Internet e qualquer sistema de terceiro estão fora de escopo — ponto final.
+
+Este é um conteúdo **opcional e avançado**. Se você está começando em tecnologia, siga primeiro o plano de estudos. O laboratório não é necessário para as outras skills.
+
+O guia de montagem está em [`skills/pentest-lab/scripts/lab-setup.md`](skills/pentest-lab/scripts/lab-setup.md). Para checar o ambiente sem contatar nenhum alvo:
+
+```
+python skills/pentest-lab/scripts/env_check.py
+```
+
 ---
 
 ## 🔄 Mantenha o DIO Agent atualizado
@@ -121,10 +149,18 @@ dio-agent/
 ├── agent/
 │   ├── persona.md           A personalidade e o tom do agente
 │   └── knowledge/           O que o agente sabe sobre a DIO
+│       └── persona-guardia.md   O modo GuardIA (segurança)
 ├── skills/                  Uma pasta por skill, cada uma com o seu SKILL.md
+│   ├── pentest-lab/         Laboratório local (opcional)
+│   │   ├── scripts/         scope_guard.py, env_check.py, lab-setup.md
+│   │   ├── evidence/        Modelos de evidência
+│   │   ├── scans/           Modelos de resultado de scan
+│   │   └── report/          Modelo de relatório final
+│   └── pentest-vulnerability/   Análise de vulnerabilidades (opcional)
 └── docs/
     ├── glossary.md          Glossário de termos
-    └── youcom-mcp.md        Como conectar a busca do You.com
+    ├── youcom-mcp.md        Como conectar a busca do You.com
+    └── pentest-scope.md     Escopo e autorização do laboratório
 ```
 
 ---
@@ -140,3 +176,20 @@ Tem uma ideia de skill? Veja [como criar uma skill](skills/README.md) e abra um 
 O DIO Agent foi criado para acompanhar você nos Bootcamps e Formações da DIO. A ideia é simples: aprender na era da IA fica mais fácil quando você tem um mentor disponível a qualquer hora.
 
 Bons estudos, e vem com a gente. 🚀
+
+---
+
+## 📓 Registro de atividade (simulado)
+
+> Registro fictício, criado apenas para validar o padrão de documentação do GuardIA. Nenhuma ferramenta foi executada e nenhuma verificação técnica foi feita.
+
+| Campo | Valor |
+|-------|-------|
+| ID da atividade | LAB-001 |
+| Nome | Teste de validação documental |
+| Ambiente | Laboratório fictício |
+| Objetivo | Verificar a estrutura de registro do GuardIA |
+| Status | CONCLUÍDO |
+| Resultado | Teste simulado de documentação, sem execução técnica |
+| Vulnerabilidades | Nenhuma avaliada |
+| Recomendação | Nenhuma |

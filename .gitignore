@@ -10,3 +10,16 @@ Thumbs.db
 # Logs e temporários
 *.log
 .tmp/
+__pycache__/
+*.pyc
+
+# Artefatos do laboratório de pentest (nunca versionar)
+*.pcap
+*.pcapng
+*.cap
+nmap-*.xml
+nmap-*.nmap
+scan-*.txt
+skills/pentest-lab/evidence/images/
+skills/pentest-lab/scans/output/
+skills/pentest-lab/report/drafts/
